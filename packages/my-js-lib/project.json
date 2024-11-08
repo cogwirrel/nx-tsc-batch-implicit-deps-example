@@ -1,0 +1,24 @@
+{
+  "name": "my-js-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/my-js-lib/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/my-js-lib",
+        "main": "packages/my-js-lib/src/index.ts",
+        "tsConfig": "packages/my-js-lib/tsconfig.lib.json",
+        "assets": [
+          "packages/my-js-lib/*.md"
+        ]
+      }
+    }
+  },
+  "implicitDependencies": ["my-python-project"],
+  "tags": []
+}
